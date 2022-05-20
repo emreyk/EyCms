@@ -1,4 +1,7 @@
-﻿using EyCms.WEB.Models;
+﻿using EyCms.CORE.Models;
+using EyCms.CORE.Repositories;
+using EyCms.CORE.Services;
+using EyCms.WEB.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,14 +10,24 @@ namespace EyCms.WEB.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IService<Slider> _service;
+        //private readonly IServiceRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IService<Slider> service)
         {
-            _logger = logger;
+            _service = service;
+
         }
 
-        public IActionResult Index()
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    var test = _service.GetAllAsync();
+        //    _logger = logger;
+        //}
+
+        public async Task<IActionResult> Index()
         {
+            var test =await  _service.GetAllAsync();
             return View();
         }
 

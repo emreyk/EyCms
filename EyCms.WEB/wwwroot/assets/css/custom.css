@@ -1,0 +1,20 @@
+﻿.navbar.bg-dark {
+    background-color: #0b2670 !important;
+}
+.text-danger {
+    color: #0b2670 !important;
+}
+
+
+.btn-primary {
+    background: #0b2670 !important;
+}
+.form-control:focus, .custom-select:focus {
+    border-bottom-color: #0b2670 !important;
+    box-shadow: 0 -1px 0 0 #0b2670 inset !important;
+}
+
+.btn-success {
+    background: #0b2670 !important;
+}
+
